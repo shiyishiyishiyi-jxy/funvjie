@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>妇女节快乐</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #ffc0cb, #fff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 48px;
+            color: #ff69b4;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        /* 祝福语样式 */
+        p {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin: 20px 0;
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: both;
+        }
+
+        /* 花朵图片样式 */
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: scaleIn 1s ease-out 1s;
+            animation-fill-mode: both;
+        }
+
+        /* 按钮样式 */
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1s ease-out 1.5s;
+            animation-fill-mode: both;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+
+        /* 动画关键帧 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 标题 -->
+    <h1>妇女节快乐！</h1>
+    <!-- 祝福语 -->
+    <p>在这个特别的日子里，向所有女性致以最诚挚的祝福。愿你们健康、美丽、幸福，每一天都充满阳光和欢笑！</p>
+    <!-- 花朵图片 -->
+    <img src="https://img1.baidu.com/it/u=2130320268,2248271613&fm=26&fmt=auto&app=138&f=JPEG?w=500&h=375"
+        alt="妇女节花朵">
+    <!-- 互动按钮 -->
+    <button onclick="alert('希望这份祝福能让你心情愉悦！')">传递祝福</button>
+</body>
+
+</html>
