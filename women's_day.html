@@ -39,25 +39,12 @@
 
         /* 花朵图片样式 */
         img {
-            max-width: 100%;
+            width: 300px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             animation: scaleIn 1s ease-out 1s;
             animation-fill-mode: both;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        /* 图片加载失败提示样式 */
-        #imageErrorMsg {
-            color: red;
-            text-align: center;
-            display: none;
-            margin-top: 10px;
         }
 
         /* 按钮样式 */
@@ -111,22 +98,6 @@
                 transform: scale(1);
             }
         }
-
-        /* 针对微信浏览器可能的样式问题，添加以下媒体查询 */
-        @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-            img {
-                image-rendering: -webkit-optimize-contrast;
-            }
-        }
-
-        /* 针对移动网络较差时的优化样式 */
-        @media (max-width: 768px) and (prefers-reduced-data: reduce) {
-            img {
-                max-width: 80%;
-                /* 可以降低图片质量或进行更细致的优化，这里简单示例 */
-                filter: brightness(80%);
-            }
-        }
     </style>
 </head>
 
@@ -136,38 +107,9 @@
     <!-- 祝福语 -->
     <p>在这个特别的日子里，向所有女性致以最诚挚的祝福。愿你们健康、美丽、幸福，每一天都充满阳光和欢笑！</p>
     <!-- 花朵图片 -->
-    <img id="theImage" src="https://raw.githubusercontent.com/shiyishiyishiyi-jxy/funvjie/main/hua.jpg" alt="妇女节花朵"
-        onerror="handleImageError(this);">
-    <div id="imageErrorMsg">图片加载失败，请检查网络或联系管理员。</div>
+    <img src="https://raw.githubusercontent.com/shiyishiyishiyi-jxy/funvjie/main/hua.jpg" alt="妇女节花朵">
     <!-- 互动按钮 -->
     <button onclick="alert('希望这份祝福能让你心情愉悦！')">传递祝福</button>
-
-    <script>
-        // 预加载图片
-        const preloadImage = new Image();
-        preloadImage.src = "https://raw.githubusercontent.com/shiyishiyishiyi-jxy/funvjie/main/hua.jpg";
-
-        // 图片加载失败处理函数
-        function handleImageError(imgElement) {
-            imgElement.style.display = 'none';
-            const errorMsg = document.getElementById('imageErrorMsg');
-            errorMsg.style.display = 'block';
-            // 可以在这里添加更多的错误处理逻辑，比如重试加载等
-        }
-
-        // 检测网络状况，根据网络情况进行提示或优化
-        if (navigator.connection) {
-            navigator.connection.addEventListener('change', function () {
-                const networkType = navigator.connection.effectiveType;
-                if (networkType === 'slow-2g' || networkType === '2g') {
-                    const img = document.getElementById('theImage');
-                    img.style.opacity = 0.8; // 降低图片透明度，提示用户网络可能较慢
-                    const errorMsg = document.getElementById('imageErrorMsg');
-                    errorMsg.textContent = "当前网络较慢，图片可能加载缓慢或失败，请耐心等待。";
-                }
-            });
-        }
-    </script>
 </body>
 
 </html>
