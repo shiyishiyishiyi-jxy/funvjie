@@ -39,7 +39,8 @@
 
         /* 花朵图片样式 */
         img {
-            width: 300px;
+            /* 使图片在小屏幕设备上自动适应宽度 */
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -96,6 +97,22 @@
             to {
                 opacity: 1;
                 transform: scale(1);
+            }
+        }
+
+        /* 针对手机屏幕的额外优化 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
             }
         }
     </style>
