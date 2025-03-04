@@ -39,7 +39,8 @@
 
         /* 花朵图片样式 */
         img {
-            width: 300px;
+            /* 使用 max-width 让图片在小屏幕上自适应宽度 */
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -98,12 +99,6 @@
                 transform: scale(1);
             }
         }
-        @media (max - width: 768px) {
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
     </style>
 </head>
 
@@ -113,8 +108,11 @@
     <!-- 祝福语 -->
     <p>在这个特别的日子里，向所有女性致以最诚挚的祝福。愿你们健康、美丽、幸福，每一天都充满阳光和欢笑！</p>
     <!-- 花朵图片 -->
-    <img src="https://raw.githubusercontent.com/shiyishiyishiyi-jxy/funvjie/main/hua.jpg" 
-        srcset="image - lowres.jpg 1x, image - highres.jpg 2x"
+    <!-- 使用 srcset 提供不同分辨率的图片，这里假设你有不同分辨率的图片 -->
+    <img src="https://raw.githubusercontent.com/shiyishiyishiyi-jxy/funvjie/main/hua.jpg"
+        srcset="https://raw.githubusercontent.com/shiyishiyishiyi-jxy/funvjie/main/hua.jpg 1x,
+                https://raw.githubusercontent.com/shiyishiyishiyi-jxy/funvjie/main/hua@2x.jpg 2x,
+                https://raw.githubusercontent.com/shiyishiyishiyi-jxy/funvjie/main/hua@3x.jpg 3x"
         alt="妇女节花朵">
     <!-- 互动按钮 -->
     <button onclick="alert('希望这份祝福能让你心情愉悦！')">传递祝福</button>
